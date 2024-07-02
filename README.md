@@ -138,9 +138,11 @@ package.json
 ```json
 {
   "lint-staged": {
-    "*.{js,ts,tsx,html,vue,json}": ["pnpm spellcheck"],
-    "*.{js,ts,tsx}": ["eslint --fix", "prettier --write"],
+    "*.{js,cjs,ts,tsx,html,vue,json,scss,sass,css}": [
+      "cspell lint --dot --gitignore --color --cache --show-suggestions --no-must-find-files"
+    ],
     "*.{cjs,json}": ["prettier --write"],
+    "*.{js,ts,tsx}": ["eslint --fix", "prettier --write"],
     "*.{vue,html}": ["eslint --fix", "prettier --write", "stylelint --fix --allow-empty-input"],
     "*.{scss,sass,css}": ["stylelint --fix --allow-empty-input", "prettier --write"]
   },
