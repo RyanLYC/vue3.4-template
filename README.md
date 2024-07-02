@@ -51,6 +51,10 @@ pnpm i eslint-config-airbnb-base eslint-plugin-import eslint-import-resolver-typ
 
 ## styleLint
 
+```shell
+pnpm i stylelint stylelint-config-standard stylelint-config-recommended-scss stylelint-config-recommended-vue postcss postcss-html postcss-scss stylelint-config-recess-order stylelint-config-html -D
+```
+
 scripts
 
 ```shell
