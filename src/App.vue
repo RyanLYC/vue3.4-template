@@ -1,8 +1,7 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
-
-const count = ref(0)
+const count = ref(2)
+const double = computed(() => count.value * 2)
 </script>
 <template>
-  <div>vue3-template-2024 {{ count }}</div>
+  <div>vue3-template-2024 {{ count }} {{ double }}</div>
 </template>

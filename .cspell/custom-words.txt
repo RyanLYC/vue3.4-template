@@ -9,3 +9,6 @@ rushstack
 stylelint
 stylelintrc
 tsbuildinfo
+unocss
+unplugin
+vueuse

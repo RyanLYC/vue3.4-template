@@ -181,7 +181,23 @@ npx husky-init
 新建commit-msg文件
 新建pre-commit文件
 
+## 自动引入库与自定义组件
+
 ## Project Setup
+
+unplugin-auto-import
+
+unplugin-vue-components
+
+## UnoCSS
+
+@unocss/reset
+
+@unocss/preset-wind
+
+@unocss/transformer-variant-group
+
+unocss
 
 ```sh
 pnpm i

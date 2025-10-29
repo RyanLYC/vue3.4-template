@@ -2,6 +2,9 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import { fileURLToPath, URL } from 'node:url'
 import { visualizer } from 'rollup-plugin-visualizer'
+import UnoCSS from 'unocss/vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
 import eslintPlugin from 'vite-plugin-eslint2'
 
@@ -11,8 +14,32 @@ export default defineConfig({
   plugins: [
     vue(),
     vueJsx(),
+    UnoCSS(),
     eslintPlugin({
       cache: false, // 禁用eslint缓存
+    }),
+    AutoImport({
+      include: [
+        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+        /\.vue$/,
+        /\.vue\?vue/, // .vue
+        /\.md$/, // .md
+      ],
+      // global imports to register
+      imports: [
+        // presets
+        'vue',
+        'vue-router',
+        // VueRouterAutoImports,
+        '@vueuse/core',
+        'pinia',
+      ],
+    }),
+    Components({
+      // 指定组件位置，默认是src/components
+      directoryAsNamespace: true,
+      // 组件名按文件夹结构分级
+      collapseSamePrefixes: true,
     }),
     visualizer({
       gzipSize: true,
